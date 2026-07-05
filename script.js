@@ -109,6 +109,7 @@ navToggle.addEventListener("click", () => {
   const open = mainNav.classList.toggle("open");
   navToggle.classList.toggle("open", open);
   navToggle.setAttribute("aria-expanded", String(open));
+  document.body.style.overflow = open ? "hidden" : "";
 });
 
 mainNav.querySelectorAll("a").forEach((link) =>
@@ -116,6 +117,7 @@ mainNav.querySelectorAll("a").forEach((link) =>
     mainNav.classList.remove("open");
     navToggle.classList.remove("open");
     navToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   })
 );
 
